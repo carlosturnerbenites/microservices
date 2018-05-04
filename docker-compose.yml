@@ -3,9 +3,20 @@ services:
 
   # The Web Cliente
   web:
+    container_name: microservices_web
     build:
       context: ./
       dockerfile: docker/web.dockerfile
     working_dir: /var/www
     ports:
-      - 8080:8080
+      - 8080:80
+
+  # Auth Service
+  auth:
+    container_name: microservices_auth
+    build:
+      context: ./
+      dockerfile: docker/auth.dockerfile
+    working_dir: /var/www
+    ports:
+      - 8081:80
