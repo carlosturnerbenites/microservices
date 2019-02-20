@@ -20,3 +20,13 @@ services:
     working_dir: /var/www
     ports:
       - 8081:80
+
+  # Test wiht flask
+  python:
+    container_name: microservices_test_python
+    build:
+      context: ./
+      dockerfile: docker/test.python.dockerfile
+    working_dir: /var/www
+    ports:
+      - 8082:80
